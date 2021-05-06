@@ -8,29 +8,21 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { TablesRoutingModule } from './tables-routing.module';
+import { TablesComponent } from './tables/tables.component';
 import { DataService } from './data.service';
-import { FormsModule } from '@angular/forms';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
-import { MatMenuModule } from '@angular/material/menu';
-import { TableExpandableRowsExample } from './tables/tables.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
     TablesRoutingModule,
     MatTableModule,
     MatFormFieldModule,
     MatPaginatorModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule,
-    MatMenuModule,
     MatSortModule,
+    MatInputModule,
     MatCheckboxModule
   ],
-  declarations: [TableExpandableRowsExample],
+  declarations: [TablesComponent],
   providers: [DataService]
 })
 export class TablesModule {}

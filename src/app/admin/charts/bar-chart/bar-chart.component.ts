@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-bar-chart',
@@ -10,8 +10,7 @@ export class BarChartComponent implements OnInit {
     scaleShowVerticalLines: false,
     responsive: true
   };
-  @Input() chartTitle:string = 'Capacity Utilization';
-  @Input() barChartLabels: string[] = [
+  barChartLabels: string[] = [
     'Oct-19',
     'Nov-19',
     'Dec-19',
@@ -22,7 +21,7 @@ export class BarChartComponent implements OnInit {
   ];
   barChartType = 'bar';
   barChartLegend = true;
-  @Input() barChartData: any[] = [
+  barChartData: any[] = [
     { data: [65, 59, 80, 81, 56, 55, 40], label: 'Available' },
     { data: [28, 48, 40, 19, 46, 27, 38], label: 'Utilized' }
   ];

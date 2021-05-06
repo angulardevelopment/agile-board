@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { childRoutes } from '../../child-routes';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-side-nav',
@@ -10,13 +9,7 @@ import { Router } from '@angular/router';
 export class SideNavComponent implements OnInit {
   showMenu = false;
   routes = childRoutes;
-  constructor(private readonly router: Router) {}
-
+  constructor() {}
 
   ngOnInit() {}
-
-  onLoggedout() {
-    localStorage.removeItem('isLoggedin');
-    this.router.navigate(['/login']);
-  }
 }

@@ -8,14 +8,8 @@
   <span class="nav-spacer"></span>
   <form class="hidden-sm" style="margin-right: 20px; margin-top: 8px">
     <mat-form-field style="font-size: 1rem;">
-      <input matInput placeholder="Search" [matAutocomplete]="auto" name='client' [(ngModel)]='selectedClient'>
+      <input matInput placeholder="Search">
     </mat-form-field>
-    <mat-autocomplete #auto="matAutocomplete">
-      <mat-option *ngFor="let client of clients" [value]="client">{{client}}</mat-option>
-    </mat-autocomplete>
-    <button class="hidden-sm" mat-icon-button (click)='onClientSearch()'>
-      <mat-icon>search</mat-icon>
-    </button>
   </form>
   <button class="hidden-sm" mat-icon-button [matMenuTriggerFor]="profile">
     <mat-icon>account_circle</mat-icon>

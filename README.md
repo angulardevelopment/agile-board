@@ -1,3 +1,0 @@
-# About
-
-Basic panel

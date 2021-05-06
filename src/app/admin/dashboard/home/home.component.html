@@ -1,15 +1,14 @@
 <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-between stretch">
   <div class="mb10" fxFlex="24" fxFlex.lt-lg="49">
-    <app-stat [bgClass]="'success'" [icon]="'all_out'" [count]="applicationService.getSelectedClient() || 3" [label]="(applicationService.getSelectedClient() == undefined || applicationService.getSelectedClient() =='') ? 'Clients' : 'Client'"></app-stat>
+    <app-stat [bgClass]="'danger'" [icon]="'cloud'" [count]="12" [label]="'Projects'"></app-stat>
   </div>
   <div class="mb10" fxFlex="24" fxFlex.lt-lg="49">
-    <app-stat [bgClass]="'danger'" [icon]="'cloud'" [count]="(applicationService.getSelectedClient() == undefined || applicationService.getSelectedClient() =='') ? 112 : 30" [label]="'Projects'"></app-stat>
+    <app-stat [bgClass]="'warn'" [icon]="'cloud_circle'" [count]="90" [label]="'Sub Projects'"></app-stat>
   </div>
   <div class="mb10" fxFlex="24" fxFlex.lt-lg="49">
-    <app-stat [bgClass]="'warn'" [icon]="'cloud_circle'" [count]="(applicationService.getSelectedClient() == undefined || applicationService.getSelectedClient() =='') ? 300 : 10" [label]="'Sprints Completed'"></app-stat>
+    <app-stat [bgClass]="'success'" [icon]="'all_out'" [count]="220" [label]="'User Stories'"></app-stat>
   </div>
   <div class="mb10" fxFlex="24" fxFlex.lt-lg="49">
-    <app-stat [bgClass]="'info'" [icon]="'announcement'" [count]="(applicationService.getSelectedClient() == undefined || applicationService.getSelectedClient() =='') ? 1200 : 110" [label]="'Hours Burn'"></app-stat>
+    <app-stat [bgClass]="'info'" [icon]="'announcement'" [count]="303" [label]="'Defects!'"></app-stat>
   </div>
 </div> 
-

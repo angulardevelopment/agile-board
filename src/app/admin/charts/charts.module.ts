@@ -14,23 +14,13 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { DataService } from './data.service';
 import { PolarChartComponent } from './polar-chart/polar-chart.component';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
     ChartsRoutingModule,
     MatCardModule,
     MatGridListModule,
-    MatButtonModule,
-    MatIconModule,
-    MatInputModule,
-    MatAutocompleteModule,
     FlexLayoutModule,
     Ng2Charts
   ],

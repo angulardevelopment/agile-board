@@ -12,20 +12,16 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { LayoutComponent } from './layout/layout.component';
 import { TopNavComponent } from './layout/top-nav/top-nav.component';
 import { SideNavComponent } from './layout/side-nav/side-nav.component';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
     AdminRoutingModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
     MatInputModule,
-    MatAutocompleteModule,
     MatMenuModule,
     MatListModule
   ],

@@ -7,8 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
-import { fakeBackendProvider } from './interceptor/fake-backend.interceptor';
-import { GraphQLModule } from './graphql.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,12 +14,11 @@ import { GraphQLModule } from './graphql.module';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    GraphQLModule,
     HttpClientModule,
     CoreModule,
     SharedModule
   ],
-  providers: [fakeBackendProvider],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
