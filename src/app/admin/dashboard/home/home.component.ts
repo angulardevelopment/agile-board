@@ -20,6 +20,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
   getClients():string[]{
+    console.log(this.applicationService.getClients(), 'this.applicationService.getClients()');
+    
     return this.applicationService.getClients();
   }
 }

@@ -4,6 +4,7 @@ import { ObserveOnMessage } from 'rxjs/internal/operators/observeOn';
 import { Observable, throwError } from 'rxjs';
 import { Apollo } from 'apollo-angular';
 import gql from "graphql-tag";
+import { map } from 'rxjs/operators';
 
 
 @Injectable({
@@ -86,6 +87,43 @@ export class ApplicationService {
       `
     });
   }
+
+  getCountries(): Observable<Country[]> {
+    return this.apollo
+      .watchQuery<any>({
+        query: COUNTRIES,
+      })
+      .valueChanges.pipe(map((result) => result.data.countries));
+  }
 }
 
+// write a GraphQL query that asks for information (name , capital, etc..) about all countries
+const COUNTRIES = gql`
+  {
+    countries {
+      name
+      capital
+      currency
+      emoji
+      phone
+      continent {
+        name
+      }
+    }
+  }
+`;
+
+export interface Country {
+  name : string
+  capital : string
+  currency : string
+  emoji : string
+  phone : string
+  continent : Continent
+
+}
+
+export interface Continent {
+  name : string
+}
 

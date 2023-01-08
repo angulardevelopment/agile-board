@@ -2,8 +2,8 @@ import { Component, ViewChild, ViewChildren, QueryList, ChangeDetectorRef } from
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource, MatTable } from '@angular/material/table';
-import { Apollo } from 'apollo-angular';
-import gql from "graphql-tag";
+// import { Apollo } from 'apollo-angular';
+// import gql from "graphql-tag";
 import { ApplicationService } from 'src/app/services/application.service';
 
 /**
@@ -41,16 +41,24 @@ export class TableExpandableRowsExample {
 
   constructor(
     private cd: ChangeDetectorRef,
-    private apollo: Apollo,
+    // private apollo: Apollo,
     private applicationService: ApplicationService
   ) { }
 
   ngOnInit() {
-      this.applicationService.getProjectsList().subscribe(
-        ({ data, loading }) => {
-          this.formatProjectsData(data.listProjects.items);
-        }
-      );
+      // this.applicationService.getProjectsList().subscribe(
+      //   ({ data, loading }) => {
+      //     console.log(data, 'datadata');
+          
+      //     // this.formatProjectsData(data.listProjects.items);
+      //   }
+      // );
+      
+     this.applicationService.getCountries().subscribe((res)=>{
+      console.log(res, 'data');
+     });
+     
+     
   }
 
   formatProjectsData(data:any):void{
