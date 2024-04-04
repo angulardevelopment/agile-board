@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { ChartsModule as Ng2Charts } from 'ng2-charts';
@@ -31,7 +30,6 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     MatInputModule,
     MatAutocompleteModule,
-    FlexLayoutModule,
     Ng2Charts
   ],
   declarations: [

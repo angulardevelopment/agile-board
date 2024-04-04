@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ObserveOnMessage } from 'rxjs/internal/operators/observeOn';
 import { Observable, throwError } from 'rxjs';
 import { Apollo } from 'apollo-angular';
 import gql from "graphql-tag";
