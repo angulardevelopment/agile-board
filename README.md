@@ -38,7 +38,6 @@ username/password - admin/admin .
 -   "@angular/material": "^9.2.0",
 -    @angular/cdk
 -   "@angular/google-maps": "^9.2.0",
--   "@angular/flex-layout": "^9.0.0-beta.29",
 
 ## Subscribe and Stay Updated!
 
