@@ -21,6 +21,7 @@ export class RouterTabs implements AfterContentInit, OnDestroy {
   constructor(private host: MatTabGroup, private router: Router) {}
 
   ngOnDestroy(): void {
+    if(this.subscription)
     this.subscription.unsubscribe();
   }
 

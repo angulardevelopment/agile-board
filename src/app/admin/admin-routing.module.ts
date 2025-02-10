@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
-import { childRoutes } from './child-routes';
+import { childRoutes } from '../child-routes';
 
 
 const routes: Routes = [
@@ -12,12 +12,12 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'dashboard'
-      },
-      ...childRoutes
+      }
     ]
   }
 ];
-
+// Merging the childRoutes using push()
+routes[0].children.push(...childRoutes);
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]

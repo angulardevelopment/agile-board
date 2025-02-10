@@ -46,13 +46,13 @@ export class TableExpandableRowsExample {
   ) { }
 
   ngOnInit() {
-      // this.applicationService.getProjectsList().subscribe(
-      //   ({ data, loading }) => {
-      //     console.log(data, 'datadata');
+      this.applicationService.getProjectsList().subscribe(
+        ({ data, loading }) => {
+          console.log(data, 'datadata');
           
-      //     // this.formatProjectsData(data.listProjects.items);
-      //   }
-      // );
+          this.formatProjectsData(data.listProjects.items);
+        }
+      );
       
      this.applicationService.getCountries().subscribe((res)=>{
       console.log(res, 'data');
@@ -64,12 +64,12 @@ export class TableExpandableRowsExample {
   formatProjectsData(data:any):void{
     data.forEach(it => {
       let project = {client: it.clientName,project: it.projectName,sprint: it.sprintId,velocity: it.teamSize,utilization: it.teamCapacity,defectleakage: it.defectsFoundUATandProd,sprintburndown: it.sprintBurndownHours,addresses:[]};
-      
+      if (it.resources && Array.isArray(it.resources)) {   
       it.resources.forEach(it1 => {
         let resource = {client: '',project: it1,sprint: it.sprintId,velocity: 46,utilization: 92,defectleakage: it.defectsFoundUATandProd,sprintburndown: it.sprintBurndownHours};
         project.addresses.push(resource);
       });
-
+    }
       this.USERS.push(project);
 
     });
@@ -83,6 +83,8 @@ export class TableExpandableRowsExample {
     });
     this.dataSource = new MatTableDataSource(this.usersData);
     this.dataSource.sort = this.sort;
+    console.log(this, 'datadata');
+
   }
 
   toggleRow(element: User) {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { childRoutes } from '../../child-routes';
 import { Router } from '@angular/router';
+import { ChildRoute, childRoutes } from 'src/app/child-routes';
 
 @Component({
   selector: 'app-side-nav',
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class SideNavComponent implements OnInit {
   showMenu = false;
-  routes = childRoutes;
+  routes: ChildRoute[] = childRoutes;
   constructor(private readonly router: Router) {}
 
 

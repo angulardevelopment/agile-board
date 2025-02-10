@@ -80,7 +80,11 @@
                   "maximumError": "10kb"
                 }
               ]
-            }
+            },
+            "development": {
+          "buildOptimizer": false,
+          "sourceMap": true },
+            "defaultConfiguration": "development"
           }
         },
         "serve": {
@@ -91,6 +95,9 @@
           "configurations": {
             "production": {
               "browserTarget": "agile-dashboard:build:production"
+            },
+            "development": {
+              "browserTarget": "agile-dashboard:build:development"
             }
           }
         },

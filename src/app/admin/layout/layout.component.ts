@@ -33,6 +33,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
   ngOnInit() { }
 
   ngOnDestroy(): void {
+    if(this.mediaWatcher)
     this.mediaWatcher.unsubscribe();
   }
 }
