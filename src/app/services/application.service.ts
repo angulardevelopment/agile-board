@@ -165,6 +165,15 @@ export class ApplicationService {
       })
       .valueChanges.pipe(map((result) => result.data.countries));
   }
+
+  addItem() {
+   return this.apollo.mutate({
+      mutation: ADD_ITEM_MUTATION,
+      variables: {
+        name: 'test item'
+      }
+    })
+  }
 }
 
 // write a GraphQL query that asks for information (name , capital, etc..) about all countries
@@ -196,4 +205,13 @@ export interface Country {
 export interface Continent {
   name : string
 }
+
+const ADD_ITEM_MUTATION = gql`
+  mutation AddItem($name: String!) {
+    addItem(name: $name) {
+      id
+      name
+    }
+  }
+`;
 

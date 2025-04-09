@@ -55,9 +55,12 @@ export class TableExpandableRowsExample {
       );
       
      this.applicationService.getCountries().subscribe((res)=>{
-      console.log(res, 'data');
+      console.log(res, 'Query data');
      });
-     
+    
+     this.applicationService.addItem().subscribe((res)=>{
+      console.log(res, 'Mutation data');
+     });
      
   }
 
